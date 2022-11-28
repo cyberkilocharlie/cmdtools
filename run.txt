@@ -1,0 +1,12 @@
+Use these to run codes;
+Ubuntu;
+sudo apt install git
+git clone https://gitlab.com/CyberK-81763/codes.git
+cd codes
+ls
+sudo sh [ENTER SCRIPT NAME HERE].sh
+
+Windows;
+Find file in File Explorer
+Right Click File
+Click Run as Administrator
