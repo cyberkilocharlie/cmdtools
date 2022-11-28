@@ -64,7 +64,6 @@ if %ERRORLEVEL% equ 2 echo Skipping disallowed media files...
 if %ERRORLEVEL% equ 1 (
         set filetypes=mp3 mov mp4 avi mpg mpeg flac m4a flv ogg gif png jpg jpeg
         cd C:\Users
-        echo 
         echo Deleting disallowed media file types...
         :: %%i = file extension
         for %%i in (!filetypes!) do (
