@@ -264,7 +264,7 @@ auditpol /set /category:* /failure:enable
 echo Policy Script Completed
 
 echo Setting Do Not Display Last User On Logon...
-ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v dontdisplaylastusername /t REG_DWORD /d 1 /f
+reg ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v dontdisplaylastusername /t REG_DWORD /d 1 /f
 echo Set Do Not Display Last User On Logon
 
 echo Disabling Domain Credential Storage...
