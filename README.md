@@ -10,7 +10,7 @@ of the Ubuntu image and will prompt for you to do some things manually.
 
 There are .txt versions of all files for editing/trouble-shooting.
 
-## How to run scripts;
+# How to run scripts;
 Linux (Ubuntu);
 ```
 sudo apt install git
