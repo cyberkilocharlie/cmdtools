@@ -11,7 +11,7 @@ of the Ubuntu image and will prompt for you to do some things manually.
 There are .txt versions of all files for editing/trouble-shooting.
 
 # How to run scripts;
-Linux (Ubuntu);
+### Linux (Ubuntu);
 ```
 sudo apt install git
 git clone https://github.com/cyberkilocharlie/cmdtools.git
@@ -19,7 +19,7 @@ cd cmdtools
 ls
 sudo sh [ENTER SCRIPT NAME HERE].sh
 ```
-Windows;
+### Windows;
 ```
 Go to https://github.com/cyberkilocharlie/cmdtools
 Download Files
