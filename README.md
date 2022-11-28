@@ -31,6 +31,7 @@ Right click that file
 Click Run as Administrator
 ```
 # Quick overview of the scripts;
+(All operations are in order)
 ### WINDOWS BATCH 1;
 ```
 Checks if script is running as admin
