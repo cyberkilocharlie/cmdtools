@@ -683,6 +683,11 @@ echo root >at.allow
 /bin/chmod 400 cron.allow at.allow
 cd ..
 
+echo "Removing all unused packages..."
+apt-get autoremove -y -qq
+apt-get autoclean -y -qq
+apt-get clean -y -qq
+
 echo "Enabling daily update checks, download upgradeable packages, autoclean interval, and unattended upgrades..."
 chmod 777 /etc/apt/apt.conf.d/10periodic
 cp /etc/apt/apt.conf.d/10periodic ~/Desktop/backups/
@@ -693,15 +698,10 @@ echo "Checking and getting updates for Ubuntu..."
 apt-get update -qq
 apt-get dist-upgrade -qq
 echo "Turning on unatended updates..."
-apt-get install unattended-upgrades -y -qq 
+apt-get install unattended-upgrades -y 
 dpkg-reconfigure -plow unattended-upgrades
 vi /etc/apt/apt.conf.d/50unattended-upgrades
 Unattended-Upgrade::Automatic-Reboot "true";
 unattended-upgrades --dry-run
-
-echo "Removing all unused packages..."
-apt-get autoremove -y -qq
-apt-get autoclean -y -qq
-apt-get clean -y -qq
 
 echo "END"
