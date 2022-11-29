@@ -691,9 +691,13 @@ chmod 644 /etc/apt/apt.conf.d/10periodic
 
 echo "Checking and getting updates for Ubuntu..."
 apt-get update -qq
-apt-get upgrade -qq
 apt-get dist-upgrade -qq
-apt-get upgradeapt-get dist-upgrade -qq
+echo "Turning on unatended updates..."
+apt-get install unattended-upgrades -y -qq 
+dpkg-reconfigure -plow unattended-upgrades
+vi /etc/apt/apt.conf.d/50unattended-upgrades
+Unattended-Upgrade::Automatic-Reboot "true";
+unattended-upgrades --dry-run
 
 echo "Removing all unused packages..."
 apt-get autoremove -y -qq
