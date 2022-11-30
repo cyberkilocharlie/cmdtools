@@ -21,7 +21,7 @@ else
     echo "Failed to identify OS version"
     return 1
 fi
-echo "Os=$OS"
+echo "Os = $OS"
 read -p "Please do Forensics... [Press enter to continue]"
 
 echo "TEAM 15-4209---------------------------"
