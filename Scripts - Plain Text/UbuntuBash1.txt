@@ -724,4 +724,86 @@ vi /etc/apt/apt.conf.d/50unattended-upgrades
 Unattended-Upgrade::Automatic-Reboot "true";
 unattended-upgrades --dry-run
 
+echo "Re-enabling root bash history..."
+if [[ -L /root/.bash_history && ! $DRYRUN = true ]]; then
+    unlink /root/.bash_history
+    echo -n > /root/.bash_history
+fi
+
+echo "Checking for open ports..."
+sudo netstat -tulpna
+while (true)
+do
+    VAR10=0
+    VAR11=""
+    echo "What port do you want to close?"
+    read VAR10
+    sudo ufw deny VAR10
+    echo "Do you want to close another port?"
+    read VAR11
+    if [ "$VAR11" != "Yes" ] || [ "$VAR11" != "yes" ]; then
+        break
+    fi
+done
+
+echo "Scanning for suspicious cron jobs..."
+echo "Logging all user cronjobs..."
+if [ "$(sudo ls -A /var/spool/cron/crontabs)" ] ; then
+    echo "WARNING! User crontabs have been found!" >> log.txt
+    sudo ls -A /var/spool/cron/crontabs >> log.txt
+fi
+echo "Printing out all root cron jobs..."
+sudo cat /etc/crontab
+
+echo "Fixing sources.list..."
+VAR111=$(cat /etc/issue.net)
+VAR112=$(echo $VAR111 | cut -c7-9)
+VAR113=$(echo $VAR111 | cut -c1-6)
+if [ $VAR113 -eq "Ubuntu" ]; then 
+    if [ $VAR112 -eq "16" ]; then
+        sudo cat ubu16.txt > /etc/apt/sources.list
+    fi
+    elif [ $VAR112 -eq "18" ]; then 
+        sudo cat ubu18.txt > /etc/apt/sources.list
+    fi
+    elif [ $VAR112 -eq "20" ]; then
+        sudo cat ubu20.txt > /etc/apt/sources.list
+    fi
+fi
+elif [ $VAR113 -eq "Debian" ]; then
+    sudo cat deb.txt > /etc/apt/sources.list
+fi
+
+echo "Clearing bash history..."
+history -c
+set +o history
+
+echo "Fixing firefox settings..."
+cd ~
+cd ./.mozilla/firefox/*.default
+touch user.js
+function FirefoxPref() {
+    echo "user_pref($1, $2);" | sudo tee -a user.js
+}
+FirefoxPref '"browser.safebrowsing.downloads.enabled"' "true"
+FirefoxPref '"browser.safebrowsing.downloads.remote.enabled"' "true"
+FirefoxPref '"browser.safebrowsing.downloads.remote.block_dangerous"' "true"
+FirefoxPref '"browser.safebrowsing.downloads.remote.block_dangerous"' "true"
+FirefoxPref '"browser.safebrowsing.downloads.remote.block_dangerous_host"' "true"
+FirefoxPref '"browser.safebrowsing.downloads.remote.block_potentially_unwanted"' "true"
+FirefoxPref '"browser.safebrowsing.downloads.remote.block_uncommon"' "true"
+FirefoxPref '"browser.safebrowsing.malware.enabled"' "true"
+FirefoxPref '"browser.safebrowsing.phishing.enabled"' "true"
+FirefoxPref '"dom.disable_open_during_load"' "true"
+FirefoxPref '"dom.block_multiple_popups"' "true"
+FirefoxPref '"dom.block_download_insecure"' "true"
+FirefoxPref '"dom.enable_performance"' "true"
+FirefoxPref '"dom.allow_scripts_to_close_windows"' "false"
+FirefoxPref '"media.autoplay.block-webaudio"' "true"
+FirefoxPref '"media.block-autoplay-until-in-foreground"' "true"
+FirefoxPref '"plugins.flashBlock.enabled"' "true"
+FirefoxPref '"privacy.socialtracking.block_cookies.enabled"' "true"
+FirefoxPref '"toolkit.telemetry.reportingpolicy.firstRun"' "false"
+cd ~
+
 echo "END"
