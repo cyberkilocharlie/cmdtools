@@ -23,6 +23,9 @@ else (
 echo Start Script 1 Team 15-4209? [Press Any Key To Continue]
 pause
 
+echo Entering God Mode...
+mkdir GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
+
 echo Should Remote Desktop Be Enabled [y/n]
 set /p rdpChk="Should Remote Desktop Be Enabled [y/n]"
 if %rdpChk%==y (
