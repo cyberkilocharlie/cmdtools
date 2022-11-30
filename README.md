@@ -116,6 +116,7 @@ Runs MRT
 ```
 ### UBUNTU BASH 1;
 ```
+Checks os type
 Checks for root privileges
 Installs good programs
 Deals with users
@@ -160,5 +161,12 @@ Allows only root in Cron
 Enables daily update checks, download upgradeable packages, autoclean interval, and unattended upgrades
 Checks and gets updates for Ubuntu
 Removes all unused packages
+Checks for open ports
+Deals with ports
+Scans for suspicious cron jobs
+Prints all root cron jobs
+Fixs sources.list
+Clears bash history
+Fixes firefox settings
 ```
 -CyberKiloCharlie
