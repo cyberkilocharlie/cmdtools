@@ -825,3 +825,4 @@ FirefoxPref '"privacy.socialtracking.block_cookies.enabled"' "true"
 FirefoxPref '"toolkit.telemetry.reportingpolicy.firstRun"' "false"
 cd ~
 echo "END"
+
