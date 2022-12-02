@@ -133,6 +133,8 @@ apt-get -y purge gnome-games > /dev/null
 echo "Listing files in user directories..."
 find /home ~+ -type f -name "*" > userfiles.txt
 
+echo "Smoothing a sinewave..."
+
 echo "Removing games from /usr/..."
 rm -rf /usr/games > /dev/null
 rm -rf /usr/local/games > /dev/null
@@ -167,6 +169,8 @@ echo "Setting PAM file permissions..."
 chown root:root /etc/pam.d
 chmod 644 /etc/pam.d
 
+echo "Lighting candles..."
+
 echo "Setting group password file permissions..."
 chown root:shadow /etc/gshadow
 chmod 640 /etc/gshadow
@@ -196,6 +200,8 @@ echo > /etc/lightdm/lightdm.conf
 echo -e '[SeatDefaults]\nallow-guest=false\ngreeter-hide-users=true\ngreeter-show-manual-login=true' >> /etc/lightdm/lightdm.conf
 chmod 644 /etc/lightdm/lightdm.conf
 
+echo "Hiding secrets..."
+
 echo "Removing scripts in bin..."
 find /bin/ -name "*.sh" -type f -delete
 
@@ -213,6 +219,8 @@ echo "/etc/group And /etc/passwd Files Are Backed Up"
 echo "Installing Program Updates..."
 apt-get -V -y install firefox hardinfo chkrootkit iptables portsentry lynis ufw gufw sysv-rc-conf nessus clamav
 apt-get -V -y install --reinstall coreutils
+
+echo "Solving a Rubiks cube..."
 
 echo "Securing Network..."
 iptables -A INPUT -p tcp -s 0/0 -d 0/0 --dport 23 -j DROP         #Block Telnet
@@ -234,6 +242,7 @@ ufw logging high
 ufw status verbose
 lsof  -i -n -P
 netstat -tulpn
+echo "Bracing for Impact..."
 echo "Backing up IPTables..."
 mkdir /iptables/
 touch /iptables/rules.v4.bak
@@ -349,6 +358,8 @@ then
 	gedit /etc/samba/smb.conf
 fi
 echo "Samba is complete"
+
+echo "Building a tower..."
 
 echo "Dealing with FTP..."
 if [ $ftpYN == no ]
@@ -471,6 +482,8 @@ then
 fi
 echo "Printing is complete."
 
+echo "Taking an IQ test..."
+
 echo "Dealing with MySQL..."
 if [ $dbYN == no ]
 then
@@ -499,6 +512,8 @@ then
 	echo " MySQL service has been restarted. MS-SQL-S, MS-SQL-M, MySQL, and MySQL-Proxy ports have been allowed."
 fi
 echo "MySQL is complete."
+
+echo "Fermenting grapes..."
 
 echo "Dealing with Web Server..."
 if [ $httpYN == no ]
@@ -669,6 +684,8 @@ apt-get purge pyrit -y -qq
 echo "Removing RARCrack..."
 apt-get purge rarcrack -y -qq
 
+echo "Winding cassettes..."
+
 echo "Removing SipCrack..."
 apt-get purge sipcrack -y -qq
 
@@ -745,6 +762,8 @@ do
         break
     fi
 done
+
+echo "Building a desk..."
 
 echo "Scanning for suspicious cron jobs..."
 echo "Logging all user cronjobs..."
