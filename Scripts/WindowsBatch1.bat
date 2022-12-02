@@ -23,6 +23,8 @@ else (
 echo Start Script 1 Team 15-4209? [Press Any Key To Continue]
 pause
 
+echo Removing spines from cacti...
+
 echo Entering God Mode...
 mkdir GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
 
@@ -57,6 +59,29 @@ if %rdpChk%==n (
 	sc stop "RemoteRegistry"
 	sc config "RemoteRegistry" start=disabled
 	echo Disabled remote desktop
+	
+echo Having a party...
+color a1
+color b6
+color c3
+color 76
+color 9f
+color a1
+color b6
+color c3
+color 76
+color 9f
+color a1
+color b6
+color c3
+color 76
+color 9f
+color a1
+color b6
+color c3
+color 76
+color 9f
+color 0f
 
 echo Starting Firewall...
 netsh advfirewall set allprofiles state on
@@ -74,6 +99,8 @@ netsh advfirewall firewall set rule name="Telnet Server" new enable=no
 netsh advfirewall firewall set rule name="netcat" new enable=no
 echo Set Firewall Rules
 
+echo Finding the meaning of life...
+
 echo Disabling Guest Account...
 net user Guest /active:no >nul
 echo Guest Account disabled
@@ -88,6 +115,10 @@ netsh advfirewall firewall add rule name="RDP Port Closed" dir=in action=block p
 echo Ports Configuration Completed
 
 REM TEAM 15-4209
+
+echo Playing poker...
+TIMEOUT /T 5
+echo Losing at poker...
 
 echo Removing Saved Credentials...
 cmdkey.exe /list > "%TEMP%\List.txt"
@@ -167,6 +198,8 @@ reg ADD HKCU\SYSTEM\CurrentControlSet\Services\CDROM /v AutoRun /t REG_DWORD /d 
 reg ADD HKLM\SYSTEM\CurrentControlSet\Control\CrashControl /v CrashDumpEnabled /t REG_DWORD /d 0 /f
 echo Removed Saved Credentials
 
+echo Breaking out of prison...
+
 echo Start Stop Services Script Starting...
 sc stop TapiSrv
 sc config TapiSrv start= disabled
@@ -206,6 +239,8 @@ echo Services Script Completed
 echo Checking Disk...
 chkdsk /f
 echo Disk Checked
+
+echo Reminding Edgar of his duties...
 
 echo Disabling Services...
 dism /online /disable-feature /featurename:IIS-WebServerRole
@@ -266,6 +301,8 @@ auditpol /set /category:* /success:enable
 auditpol /set /category:* /failure:enable
 echo Policy Script Completed
 
+echo Trying on socks...
+
 echo Setting Do Not Display Last User On Logon...
 reg ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v dontdisplaylastusername /t REG_DWORD /d 1 /f
 echo Set Do Not Display Last User On Logon
@@ -274,6 +311,25 @@ echo Disabling Domain Credential Storage...
 reg ADD HKLM\SYSTEM\CurrentControlSet\Control\Lsa /v disabledomaincreds /t REG_DWORD /d 1 /f 
 echo Domain Credential Storage Disabled
 
+echo Singing a song...
+echo -----Whoa, Black Betty (Bam-ba-lam)-------------------
+TIMEOUT /T 2 
+echo -----Whoa, Black Betty (Bam-ba-lam)-------------------
+TIMEOUT /T 2 
+echo -----Black Betty had a child (Bam-ba-lam)-------------
+TIMEOUT /T 2 
+echo -----The damn thing gone wild (Bam-ba-lam)------------
+TIMEOUT /T 2 
+echo -----She said, "I'm worryin' outta mind" (Bam-ba-lam)-
+TIMEOUT /T 2 
+echo -----The damn thing gone blind (Bam-ba-lam)-----------
+TIMEOUT /T 2 
+echo -----I said oh, Black Betty (Bam-ba-lam)--------------
+TIMEOUT /T 2 
+echo -----Whoa, Black Betty (Bam-ba-lam)-------------------
+TIMEOUT /T 2 
+echo Shutting up...
+
 echo Unallowing Remote Access To Floppies...
 reg ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AllocateFloppies /t REG_DWORD /d 1 /f
 echo Unallowed Remote Access To Floppies
@@ -281,6 +337,8 @@ echo Unallowed Remote Access To Floppies
 echo Setting Idle Time Limit To 45 Minutes...
 ADD HKLM\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters /v autodisconnect /t REG_DWORD /d 45 /f 
 echo Idle Time limit Is Set To 45 Minutes
+
+echo Failing a captcha...
 
 echo Firewall Settings Configuring..
 netsh advfirewall set publicprofile state on
@@ -293,7 +351,7 @@ echo Disabling shutdown without logon...
 REGEDIT.EXE  /S  "%~dp0\bundle\Disable_Shutdown_without_Logon.reg" >nul
 echo Disbled shutdown without logon
 
-echo Password Policy Script Starting...
+echo Starting Password Policy Script...
 net accounts /minpwlen:12
 net accounts /maxpwage:40
 net accounts /minpwage:10
@@ -302,6 +360,8 @@ net accounts /lockoutthreshold:3
 net accounts /lockoutduration:30
 net accounts /lockoutwindow:30
 echo Password Policy Script Completed
+
+echo Eating catnip...
 
 echo Turning On Auto Updates...
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 3 /f
