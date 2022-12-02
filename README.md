@@ -11,10 +11,11 @@ of the Ubuntu image and will prompt for you to do some things manually.
 There are .txt versions of all files for editing/trouble-shooting.
 
 These files scripts are only allowed to be used in the CyPat competition by CyPat team 15-4209 in my grade 9 year (2022) and can be used beyond that by only
-CyberKiloCharlie. These scripts can be used for securing your own systems, so long as it is not a system in the CyPat competition. You can distribute the scripts so 
-long as I (CyberKiloCharlie) am attributed as the author, and the distribution is not commercial in any form. Any use in the CyPat competion other than by team 15-4209
-or by CyberKiloCharlie is not allowed under section 3011-1-d and 3011.4.5.b of the CyPat XV national youth cyber defense competition rule book and is punishable by
-disqualification from the CyPat tournament. 
+CyberKiloCharlie or by any of CyberKiloCharlie's future teams. These scripts can be used for securing your own systems, so long as it is not a system in the CyPat
+competition. You can distribute the scripts so 
+long as I (CyberKiloCharlie) am attributed as the author, and the distribution is not commercial in any form. Any use in the CyPat competion other than by team 
+15-4209, by CyberKiloCharlie, or by any of CyberKiloCharlie's future teams is not allowed under section 3011-1-d and 3011.4.5.b of the CyPat XV national youth cyber
+defense competition rule book and is punishable by disqualification from the CyPat tournament. 
 
 # How to run scripts;
 ### Linux (Ubuntu);
