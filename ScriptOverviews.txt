@@ -115,7 +115,7 @@ Clears out IPTables
 Blocks Bogons
 Gathers Information
 Prompts you to check repo for issues
-Deals with vunreble programs/services
+Deals with vulnerable programs/services
 Removes Netcat and all other instances
 Removes hacking tools
 Denys all outside packets from internet claiming to be from loopback
