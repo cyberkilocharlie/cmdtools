@@ -22,7 +22,7 @@ else
     return 1
 fi
 echo "Os = $OS"
-read -p "Please do Forensics... [Press enter to continue]"
+read -p "Please do forensics... [Press enter to continue]"
 
 echo "TEAM 15-4209---------------------------"
 echo "Linux Bash Script 1------------cc-nd-nc"
@@ -734,7 +734,7 @@ chmod 644 /etc/apt/apt.conf.d/10periodic
 echo "Checking and getting updates for Ubuntu..."
 apt-get update -qq
 apt-get dist-upgrade -qq
-echo "Turning on unatended updates..."
+echo "Turning on unattended updates..."
 apt-get install unattended-upgrades -y 
 dpkg-reconfigure -plow unattended-upgrades
 vi /etc/apt/apt.conf.d/50unattended-upgrades
