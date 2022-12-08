@@ -22,7 +22,10 @@ else
     return 1
 fi
 echo "Os = $OS"
-read -p "Please Do Forensics... [Press enter to continue]"
+
+read -p "READ README [Press Any Key To Continue]"
+
+read -p "PLEASE DO FORENSICS [Press Any Key To Continue]"
 
 echo "TEAM 15-4209---------------------------"
 echo "Linux Bash Script 1------------cc-nd-nc"
